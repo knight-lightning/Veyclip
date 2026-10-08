@@ -1,0 +1,187 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 77;
+    objects = {
+        /* Build files */
+        A10000000000000000000001 = {isa = PBXBuildFile; fileRef = A20000000000000000000002; };
+        A10000000000000000000002 = {isa = PBXBuildFile; productRef = A90000000000000000000002; };
+        A10000000000000000000003 = {isa = PBXBuildFile; fileRef = A20000000000000000000003; };
+
+        /* Product and document references */
+        A20000000000000000000001 = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "ShareX Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+        A20000000000000000000002 = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCaptureCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+        A20000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = text; path = THIRD_PARTY_NOTICES.md; sourceTree = "<group>"; };
+
+        /* Synchronized source folders (Xcode 26) */
+        A30000000000000000000001 = {isa = PBXFileSystemSynchronizedRootGroup; path = Sources/ShareXMac; sourceTree = "<group>"; };
+        A30000000000000000000002 = {isa = PBXFileSystemSynchronizedRootGroup; path = Sources/CaptureCore; sourceTree = "<group>"; };
+        A30000000000000000000003 = {
+            isa = PBXGroup;
+            children = (A30000000000000000000001, A30000000000000000000002, A20000000000000000000003, A30000000000000000000004);
+            sourceTree = "<group>";
+        };
+        A30000000000000000000004 = {
+            isa = PBXGroup;
+            children = (A20000000000000000000001, A20000000000000000000002);
+            name = Products;
+            sourceTree = "<group>";
+        };
+
+        /* Build phases */
+        A40000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+        A40000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001, A10000000000000000000002); runOnlyForDeploymentPostprocessing = 0; };
+        A40000000000000000000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000003); runOnlyForDeploymentPostprocessing = 0; };
+        A40000000000000000000004 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+        A40000000000000000000005 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+
+        /* Targets */
+        A50000000000000000000001 = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = A70000000000000000000002;
+            buildPhases = (A40000000000000000000001, A40000000000000000000002, A40000000000000000000003);
+            buildRules = ();
+            dependencies = (A80000000000000000000002);
+            fileSystemSynchronizedGroups = (A30000000000000000000001);
+            name = ShareXMac;
+            packageProductDependencies = (A90000000000000000000002);
+            productName = "ShareX Mac";
+            productReference = A20000000000000000000001;
+            productType = "com.apple.product-type.application";
+        };
+        A50000000000000000000002 = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = A70000000000000000000003;
+            buildPhases = (A40000000000000000000004, A40000000000000000000005);
+            buildRules = ();
+            dependencies = ();
+            fileSystemSynchronizedGroups = (A30000000000000000000002);
+            name = CaptureCore;
+            productName = CaptureCore;
+            productReference = A20000000000000000000002;
+            productType = "com.apple.product-type.library.static";
+        };
+        A80000000000000000000001 = {
+            isa = PBXContainerItemProxy;
+            containerPortal = A60000000000000000000001;
+            proxyType = 1;
+            remoteGlobalIDString = A50000000000000000000002;
+            remoteInfo = CaptureCore;
+        };
+        A80000000000000000000002 = {isa = PBXTargetDependency; target = A50000000000000000000002; targetProxy = A80000000000000000000001; };
+
+        /* Project */
+        A60000000000000000000001 = {
+            isa = PBXProject;
+            attributes = {BuildIndependentTargetsInParallel = YES; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; };
+            buildConfigurationList = A70000000000000000000001;
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (en, Base);
+            mainGroup = A30000000000000000000003;
+            minimizedProjectReferenceProxies = 1;
+            packageReferences = (A90000000000000000000001);
+            preferredProjectObjectVersion = 77;
+            productRefGroup = A30000000000000000000004;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (A50000000000000000000001, A50000000000000000000002);
+        };
+
+        /* Project settings */
+        B10000000000000000000001 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CLANG_ENABLE_MODULES = YES;
+                MACOSX_DEPLOYMENT_TARGET = 26.0;
+                SDKROOT = macosx;
+                SWIFT_VERSION = 5.0;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ONLY_ACTIVE_ARCH = YES;
+            };
+            name = Debug;
+        };
+        B10000000000000000000002 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CLANG_ENABLE_MODULES = YES;
+                MACOSX_DEPLOYMENT_TARGET = 26.0;
+                SDKROOT = macosx;
+                SWIFT_VERSION = 5.0;
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+            };
+            name = Release;
+        };
+
+        /* App settings */
+        B20000000000000000000001 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CODE_SIGN_ENTITLEMENTS = Resources/ShareXMac.entitlements;
+                CODE_SIGN_IDENTITY = "-";
+                CODE_SIGN_STYLE = Manual;
+                ENABLE_APP_SANDBOX = NO;
+                ENABLE_HARDENED_RUNTIME = NO;
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = Resources/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+                PRODUCT_BUNDLE_IDENTIFIER = local.sharexmac.capture;
+                PRODUCT_NAME = "ShareX Mac";
+                PRODUCT_MODULE_NAME = ShareXMac;
+                EXECUTABLE_NAME = ShareXMac;
+                SWIFT_INCLUDE_PATHS = "$(BUILT_PRODUCTS_DIR)";
+                ENABLE_TESTABILITY = YES;
+            };
+            name = Debug;
+        };
+        B20000000000000000000002 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CODE_SIGN_ENTITLEMENTS = Resources/ShareXMac.entitlements;
+                CODE_SIGN_IDENTITY = "-";
+                CODE_SIGN_STYLE = Manual;
+                ENABLE_APP_SANDBOX = NO;
+                ENABLE_HARDENED_RUNTIME = NO;
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = Resources/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+                PRODUCT_BUNDLE_IDENTIFIER = local.sharexmac.capture;
+                PRODUCT_NAME = "ShareX Mac";
+                PRODUCT_MODULE_NAME = ShareXMac;
+                EXECUTABLE_NAME = ShareXMac;
+                SWIFT_INCLUDE_PATHS = "$(BUILT_PRODUCTS_DIR)";
+            };
+            name = Release;
+        };
+
+        /* Shared core settings */
+        B30000000000000000000001 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {DEFINES_MODULE = YES; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; ENABLE_TESTABILITY = YES; };
+            name = Debug;
+        };
+        B30000000000000000000002 = {
+            isa = XCBuildConfiguration;
+            buildSettings = {DEFINES_MODULE = YES; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; };
+            name = Release;
+        };
+
+        /* Configuration lists */
+        A70000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (B10000000000000000000001, B10000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        A70000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (B20000000000000000000001, B20000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        A70000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (B30000000000000000000001, B30000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+
+        /* Hotkey dependency */
+        A90000000000000000000001 = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+            requirement = {kind = exactVersion; version = 3.1.0; };
+        };
+        A90000000000000000000002 = {isa = XCSwiftPackageProductDependency; package = A90000000000000000000001; productName = KeyboardShortcuts; };
+    };
+    rootObject = A60000000000000000000001;
+}

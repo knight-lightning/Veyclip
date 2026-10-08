@@ -1,0 +1,22 @@
+name: macOS build
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: swift --version
+      - name: Core tests
+        run: swift test
+      - name: Bundle app
+        run: bash scripts/build-macos.sh release
+      - name: Archive app
+        run: ditto -c -k --keepParent "dist/ShareX Mac.app" dist/ShareXMac.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ShareXMac-development
+          path: dist/ShareXMac.zip
